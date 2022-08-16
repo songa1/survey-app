@@ -3,6 +3,7 @@
 * {
     box-sizing: border-box;
     font-family: 'Space Grotesk', sans-serif;
+    transition: all ease-in-out 0.1s;
 }
 
 body, html {
@@ -29,6 +30,7 @@ body, html {
     flex-direction: column;
     justify-content: space-around;
     position: relative;
+    padding: 20px;
 }
 
 .btn {
@@ -38,4 +40,23 @@ body, html {
     color: aliceblue;
     font-weight: bolder;
     font-size: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.account {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.obSide {
+    background-image: linear-gradient(45deg, #6303B1, #ff0099);
 }

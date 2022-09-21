@@ -1,0 +1,66 @@
+
+
+.dashboard-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.left {
+    background-color: rgb(255, 255, 255);
+    height: 100vh;
+    flex: 1;
+}
+
+.right {
+    height: 100vh;
+    flex: 7;
+}
+
+.dash-logo {
+    width: 100px;
+}
+
+.dash-topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: teal;
+    padding: 15px;
+}
+
+.dash-menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.dash-menu a {
+    padding: 10px;
+    color: aliceblue;
+}
+
+.survey {
+    width: 40%;
+    background-color: aquamarine;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.survey h1 {
+    padding: 0;
+    margin: 0;
+}
+
+.metadata {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.metadata p {
+    background-color: aliceblue;
+    padding: 5px;
+    border-radius: 5px;
+}

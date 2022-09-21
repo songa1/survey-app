@@ -19,8 +19,8 @@ logNav.addEventListener("click", (e)=> {
         logPart.style.display = "block";
         logNav.style.backgroundColor = "teal";
         logNav.style.color = "white";
-        regNav.style.backgroundColor = "white";
-        regNav.style.color = "teal";
+        regNav.style.backgroundColor = "transparent";
+        regNav.style.color = "white";
     }
 })
 
@@ -31,8 +31,8 @@ regNav.addEventListener("click", (e)=> {
         logPart.style.display = "none";
         regNav.style.backgroundColor = "teal";
         regNav.style.color = "white";
-        logNav.style.backgroundColor = "white";
-        logNav.style.color = "teal";
+        logNav.style.backgroundColor = "transparent";
+        logNav.style.color = "white";
     }else {
         return false;
     }

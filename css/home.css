@@ -53,6 +53,11 @@ a {
     height: 100vh;
 } */
 
+.right a {
+    color: aliceblue;
+    text-decoration: dashed;
+}
+
 .navig {
     display: flex;
     justify-content: space-around;

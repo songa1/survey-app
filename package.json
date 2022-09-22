@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/songa1/survey-app#readme",
   "dependencies": {
-    "sweetalert2": "^11.4.33"
+    "alert-js": "^1.0.1",
+    "ripple-js": "^1.4.4"
   },
   "devDependencies": {
     "stylelint": "^13.13.1",

@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/dashboard-content.css">
+    <script src="../node_modules/ripple-js/ripple.min.js"></script>
+    <script src="../node_modules/alert-js/alert.min.js"></script>
     <script type="module" src="../js/goto.js"></script>
-    <script type="module" src="../js/index.js"></script>
+    <!-- <script type="module" src="../js/index.js"></script> -->
+
 </head>
 <body>
     <div class="dashboard-container">
@@ -69,11 +72,7 @@
                     $sqli = "INSERT INTO surs (`survey_title`,`question`, `survey_slug`,`creator`, `creation_date`, `privacy`) VALUES ('$title', '$body', '$slug', '1', '$today', '$privacy')";
 
                     if ($con->query($sqli) === TRUE) {
-                        ?>
-                            <script>
-                                sMessage();
-                            </script>
-                        <?php
+                        echo '<script>alert.show("Question added!");</script>';
                     } else {
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }

@@ -1,3 +1,4 @@
+<?php include('../php/connect.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
             <h2 class="dash-logo">AskPublic</h2>
             <div class="right-actions">
                 <button>Notifications</button>
-                <button>Add New +</button>
+                <button onclick="gotoNew()">Add New +</button>
             </div>
         </section>
         <section class="main-body">
@@ -29,9 +30,9 @@
                 </div>
                 <div class="menu">
                     <a href="#">Analytics</a>
-                    <a href="#">Surveys</a>
+                    <a href="./listing.php" class="active">Surveys</a>
                     <a href="#">Settings</a>
-                    <a href="#">Logout</a>
+                    <a href="#" id="logout">Logout</a>
                 </div>
             </div>
             <div class="right-content">
@@ -39,31 +40,37 @@
                     <h2>List of all surveys you created</h2>
                     <input type="text" placeholder="Search...">
                 </div>
+                
                 <div class="surveys">
+                    <?php 
+                        $sql = "SELECT * FROM surs";
+
+                        $result = $con->query($sql);
+
+                        if ($result->num_rows > 0) {
+                            while($row = $result->fetch_assoc()) {
+                    ?>
                     <div class="survey">
                         <img src="../assets/survey-results-analysis.jpg" alt="User">
                         <div class="mdata">
-                            <h1>Registration Form</h1>
-                            <p>Created on 22 January 2022</p>
+                            <h1><?php echo $row["survey_title"] ?></h1>
+                            <p>Created on <?php echo $row["creation_date"] ?></p>
                         </div>
                     </div>
-                    <div class="survey">
-                        <img src="../assets/survey-results-analysis.jpg" alt="User">
-                        <div class="mdata">
-                            <h1>Registration Form</h1>
-                            <p>Created on 22 January 2022</p>
-                        </div>
-                    </div>
-                    <div class="survey">
-                        <img src="../assets/survey-results-analysis.jpg" alt="User">
-                        <div class="mdata">
-                            <h1>Registration Form</h1>
-                            <p>Created on 22 January 2022</p>
-                        </div>
-                    </div>
+                    
+                    <?php
+                        }
+                    } else {
+                      echo "0 results";
+                    }
+
+                    $con->close();
+
+                    ?>
                 </div>
             </div>
         </section>
     </div>
+    <script src="../js/goto.js"></script>
 </body>
 </html>

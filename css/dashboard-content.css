@@ -9,6 +9,8 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    height: 60%;
+    overflow: scroll;
 }
 
 .survey {
@@ -18,7 +20,7 @@
     border: 1px solid var(--main-blue);
     border-radius: 15px;
     gap: 10px;
-    min-width: 50%;
+    width: 70%;
 }
 
 .survey img {
@@ -51,4 +53,47 @@
     background-color: transparent;
     outline: none;
     color: teal;
+}
+
+.add-form {
+    background-color: #fff;
+    padding: 5px;
+}
+
+.add-form input {
+    padding: 10px;
+    width: 100%;
+}
+
+.add-form textarea {
+    width: 100%;
+    margin: 5px 0;
+}
+
+.cont {
+    display: flex;
+    gap: 10px;
+}
+
+.add-form {
+    flex: 8;
+}
+
+.rightbar {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.link, .privacy {
+    width: 100%;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.link input, .privacy select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
 }

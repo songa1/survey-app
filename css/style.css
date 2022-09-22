@@ -76,3 +76,11 @@ body, html {
     padding: 20px auto;
     margin: 50px 0 0 0;
 }
+
+.active {
+    color: teal;
+}
+
+#logout {
+    color: red;
+}

@@ -2,9 +2,9 @@
     $host = "localhost";  
     $user = "root";  
     $password = '';  
-    $db_name = "niguteco_nigute";  
+    $db_name = "survey";  
       
-    $con = mysqli_connect($host, $user, $password, $db_name);  
+    $con = new mysqli($host, $user, $password, $db_name);  
     if(mysqli_connect_errno()) {  
         die("Failed to connect with MySQL: ". mysqli_connect_error());  
     }  

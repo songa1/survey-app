@@ -1,0 +1,23 @@
+{
+  "name": "achille-survey",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/songa1/survey-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/songa1/survey-app/issues"
+  },
+  "homepage": "https://github.com/songa1/survey-app#readme",
+  "dependencies": {
+    "sweetalert2": "^11.4.33"
+  }
+}

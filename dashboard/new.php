@@ -12,7 +12,6 @@
     <script src="../node_modules/ripple-js/ripple.min.js"></script>
     <script src="../node_modules/alert-js/alert.min.js"></script>
     <script type="module" src="../js/goto.js"></script>
-    <!-- <script type="module" src="../js/index.js"></script> -->
 
 </head>
 <body>
@@ -72,7 +71,8 @@
                     $sqli = "INSERT INTO surs (`survey_title`,`question`, `survey_slug`,`creator`, `creation_date`, `privacy`) VALUES ('$title', '$body', '$slug', '1', '$today', '$privacy')";
 
                     if ($con->query($sqli) === TRUE) {
-                        echo '<script>alert.show("Question added!");</script>';
+                        echo '<script>alert("Question added!");</script>';
+                        echo '<script>window.location.href = "./listing.php";</script>';
                     } else {
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }

@@ -53,7 +53,7 @@
                     <div class="survey">
                         <img src="../assets/survey-results-analysis.jpg" alt="User">
                         <div class="mdata">
-                            <h1><?php echo $row["survey_title"] ?></h1>
+                            <a href="../i.html#<?php echo $row['id'] ?>"><?php echo $row["survey_title"] ?></a>
                             <p>Created on <?php echo $row["creation_date"] ?></p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <?php
                         }
                     } else {
-                      echo "0 results";
+                      echo "<h1>There are no questions at the moment!</h1>";
                     }
 
                     $con->close();

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
+:root {
+    --main-blue: rgb(9, 54, 83);
+}
+
 * {
     box-sizing: border-box;
     font-family: 'Space Grotesk', sans-serif;
@@ -65,4 +69,10 @@ body, html {
     width: 150px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.back {
+    text-align: center;
+    padding: 20px auto;
+    margin: 50px 0 0 0;
 }

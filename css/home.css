@@ -36,7 +36,7 @@ a {
 }
 
 .right {
-    width: 40%;
+    min-width: 40%;
     margin: 50px auto;
     background-color: rgb(9, 54, 83);
     color: white;

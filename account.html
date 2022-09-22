@@ -17,17 +17,17 @@
                 <div id="regBtn">Register</div>
             </div>
             <div class="login" id="login">
-                <form action="">
+                <form action="./php/login.php">
                     <div class="input-field">
                         <label>Email</label>
-                        <input type="email" />
+                        <input type="email" name="email" id="email" required/>
                     </div>
                     <div class="input-field">
                         <label>Password</label>
-                        <input type="password" />
+                        <input type="password" name="password" id="password" required/>
                     </div>
                     <div class="input-submit row">
-                        <button>Login</button>
+                        <input type="submit" class="btn" value="Login">
                         <a href="#">Forgot password?</a>
                     </div>
                 </form>

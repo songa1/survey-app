@@ -21,7 +21,7 @@
     width: 100%;
     color: var(--main-blue);
     padding: 5px 0;
-    height: 10vh;
+    height: 5vh;
 }
 
 .dash-topnav button {
@@ -34,7 +34,7 @@
 
 .main-body {
     display: flex;
-    height: 90vh;
+    height: 95vh;
     width: 100%;
     padding: 20px 0;
 }
@@ -42,17 +42,9 @@
 .left-menu {
     height: 100%;
     background-color: #fff;
-    width: 20%;
+    /* width: 20%; */
+    flex: 1;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.right-content {
-    width: 50%;
-    margin: 0 auto;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    padding: 0 20px;
 }
 
 .profile {
@@ -91,10 +83,4 @@
     font-weight: bold;
     text-decoration: none;
     color: var(--main-blue);
-}
-
-.dash-item-title {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 }

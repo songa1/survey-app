@@ -1,0 +1,100 @@
+
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    padding: 0 20px;
+}
+
+.dash-logo {
+    width: 100px;
+    margin: 0;
+}
+
+.dash-topnav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5px solid var(--main-blue);
+    width: 100%;
+    color: var(--main-blue);
+    padding: 5px 0;
+    height: 10vh;
+}
+
+.dash-topnav button {
+    background-color: teal;
+    padding: 5px 20px;
+    border: 0;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.main-body {
+    display: flex;
+    height: 90vh;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.left-menu {
+    height: 100%;
+    background-color: #fff;
+    width: 20%;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.right-content {
+    width: 50%;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    gap: 10px;
+    background-color: var(--main-blue);
+    color: #fff;
+}
+
+.profile img {
+    width: 50px;
+    height: 50px;
+    background-color: var(--main-blue);
+    border-radius: 50%;
+}
+
+.profile .metadata h3, p {
+    margin: 0;
+}
+
+.position-title {
+    color: rgb(177, 177, 177);
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.menu a {
+    padding: 10px 0;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--main-blue);
+}
+
+.dash-item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

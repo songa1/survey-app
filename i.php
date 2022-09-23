@@ -35,8 +35,8 @@
         </header>
         <main>
             <div class="input-field">
-                <label>Email</label>
-                <input type="email" />
+                <label>Enter your answer</label>
+                <textarea  />
             </div>
             <div class="input-submit">
                 <button>Submit</button>

@@ -17,10 +17,6 @@
     "url": "https://github.com/songa1/survey-app/issues"
   },
   "homepage": "https://github.com/songa1/survey-app#readme",
-  "dependencies": {
-    "alert-js": "^1.0.1",
-    "ripple-js": "^1.4.4"
-  },
   "devDependencies": {
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",

@@ -4,21 +4,6 @@ $cookietwo = "id";
 include('../php/connect.php'); 
 $username = $_COOKIE[$cookie];
 $userid = $_COOKIE[$cookietwo];
-$question_ans = $_GET['question'];
-
-$sql = "SELECT * FROM surs WHERE id='$question_ans'";
-
-$result = $con->query($sql);
-
-
-
-if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-        setcookie('question', $row['question'] ? $row['question'] : "No Question Added!", time() + (86400 * 30), "/");
-    }
-}
-
-$question_title = $_COOKIE['question'];
 
 ?>
 
@@ -28,10 +13,11 @@ $question_title = $_COOKIE['question'];
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Answers</title>
+    <title>Dashboard | Analytics</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/dashboard-content.css">
+    <link rel="stylesheet" href="../css/dashboard-analytic.css">
 </head>
 <body>
     <div class="dashboard-container">
@@ -60,37 +46,27 @@ $question_title = $_COOKIE['question'];
             </div>
             <div class="right-content">
                 <div class="dash-top-title">
-                    <h2>Answers to <?php echo "<i>'$question_title'</i>"; ?></h2>
-                    <input type="text" placeholder="Search...">
+                    <h2>Lifetime Analytics</h2>
+                    <form method="POST">
+                        <select name="time" id="time">
+                            <option value="now">Today</option>
+                        </select>
+                    </form>
                 </div>
                 
-                <div class="surveys">
-                    <?php 
-                        
-                        $sql = "SELECT * FROM answer WHERE question_answered='$question_ans'";
-
-                        $result = $con->query($sql);
-
-                        if ($result->num_rows > 0) {
-                            while($row = $result->fetch_assoc()) {
-                    ?>
-                    <div class="survey">
-                        <div class="mdata">
-                            <a><?php echo $row["answer"] ?></a>
-                            <p>Created on <?php echo $row["creation_date"] ?></p>
-                            
-                        </div>
+                <div class="cards">
+                    <div class="card">
+                        <h1>12</h1>
+                        <p>Questions</p>
                     </div>
-                    
-                    <?php
-                        }
-                    } else {
-                      echo "<h1>There are no answers at the moment!</h1>";
-                    }
-
-                    $con->close();
-
-                    ?>
+                    <div class="card">
+                        <h1>12</h1>
+                        <p>Answers</p>
+                    </div>
+                    <div class="card">
+                        <h1>12</h1>
+                        <p>Months since joined</p>
+                    </div>
                 </div>
             </div>
         </section>

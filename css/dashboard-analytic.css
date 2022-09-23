@@ -10,6 +10,16 @@
   
 .card {
     background-color: #fff;
-    padding: 20px;
     flex: 1;
+    text-align: center;
+}
+
+.card p {
+    background-color: rgb(9, 54, 83);
+    color: #fff;
+    padding: 20px;
+}
+
+.card h1 {
+    padding: 10px 20px;
 }

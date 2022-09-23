@@ -1,4 +1,4 @@
-<?php include('./php/connect/php'); ?>
+<?php include('php/connect.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -42,9 +42,9 @@
                     $email = $_POST['email_login'];
                     $password = $_POST['password_login'];
 
-                    $username = stripcslashes($username);  
+                    $email = stripcslashes($email);  
                     $password = stripcslashes($password);  
-                    $username = mysqli_real_escape_string($con, $email);  
+                    $email = mysqli_real_escape_string($con, $email);  
                     $password = mysqli_real_escape_string($con, $password);  
 
                     $sql = "SELECT * FROM users WHERE email= '$email' AND password = '$password'";

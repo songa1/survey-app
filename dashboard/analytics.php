@@ -71,9 +71,13 @@ $userid = $_COOKIE[$cookietwo];
                         <p>Answers</p>
                     </div> -->
                     <div class="card">
-                        <h1>12</h1>
+                        <h1><?php echo "Date"; ?></h1>
                         <p>Months since joined</p>
                     </div>
+
+                    <?php
+                        $con->close();
+                    ?>
                 </div>
             </div>
         </section>

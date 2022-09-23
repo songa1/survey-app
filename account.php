@@ -91,9 +91,9 @@
                     $names = $_POST['names'];
 
                     $sql = "INSERT INTO users (`user_name`, `email`, `password`, `creation_date`) VALUES ('$names', '$email', '$password', $today)";
-                    $regres= mysqli_query($con, $sql);  
+                    $regre = mysqli_query($con, $sql);  
                     
-                    if($regres === true){  
+                    if($regre === true){  
                         echo "<script>alert('Successfully registered! Login to continue!')</script>"; 
                         echo "<script>window.location.reload();</script>";  
                     }  

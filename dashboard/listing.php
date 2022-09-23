@@ -32,7 +32,7 @@
                     <a href="#">Analytics</a>
                     <a href="./listing.php" class="active">Surveys</a>
                     <a href="#">Settings</a>
-                    <a href="#" id="logout">Logout</a>
+                    <a href="../account.php" id="logout">Logout</a>
                 </div>
             </div>
             <div class="right-content">
@@ -53,7 +53,7 @@
                     <div class="survey">
                         <img src="../assets/survey-results-analysis.jpg" alt="User">
                         <div class="mdata">
-                            <h1><?php echo $row["survey_title"] ?></h1>
+                            <a href="../i.php?id=<?php echo $row['survey_slug'] ?>"><?php echo $row["survey_title"] ?></a>
                             <p>Created on <?php echo $row["creation_date"] ?></p>
                         </div>
                     </div>
@@ -61,7 +61,7 @@
                     <?php
                         }
                     } else {
-                      echo "0 results";
+                      echo "<h1>There are no questions at the moment!</h1>";
                     }
 
                     $con->close();

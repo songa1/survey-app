@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/dashboard-content.css">
+    <script src="../node_modules/ripple-js/ripple.min.js"></script>
+    <script src="../node_modules/alert-js/alert.min.js"></script>
     <script type="module" src="../js/goto.js"></script>
-    <script type="module" src="../js/index.js"></script>
+
 </head>
 <body>
     <div class="dashboard-container">
@@ -34,7 +36,7 @@
                     <a href="#">Analytics</a>
                     <a href="./listing.php">Surveys</a>
                     <a href="#">Settings</a>
-                    <a href="#" id="logout">Logout</a>
+                    <a href="../account.php" id="logout">Logout</a>
                 </div>
             </div>
             <div class="right-content">
@@ -69,11 +71,8 @@
                     $sqli = "INSERT INTO surs (`survey_title`,`question`, `survey_slug`,`creator`, `creation_date`, `privacy`) VALUES ('$title', '$body', '$slug', '1', '$today', '$privacy')";
 
                     if ($con->query($sqli) === TRUE) {
-                        ?>
-                            <script>
-                                sMessage();
-                            </script>
-                        <?php
+                        echo '<script>alert("Question added!");</script>';
+                        echo '<script>window.location.href = "./listing.php";</script>';
                     } else {
                         echo "Error: " . $sql . "<br>" . $conn->error;
                     }

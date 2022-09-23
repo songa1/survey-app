@@ -1,86 +1,86 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk&display=swap');
 
 :root {
-    --main-blue: rgb(9, 54, 83);
+  --main-blue: rgb(9, 54, 83);
 }
 
 * {
-    box-sizing: border-box;
-    font-family: 'Space Grotesk', sans-serif;
-    transition: all ease-in-out 0.1s;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all ease-in-out 0.1s;
 }
 
-body, html {
-    margin: 0;
-    width: 100%;
-    background-color: rgb(245, 245, 245);
+body,
+html {
+  margin: 0;
+  width: 100%;
+  background-color: rgb(245, 245, 245);
 }
 
 .title {
-    font-weight: bold;
-    font-size: 50px;
+  font-weight: bold;
+  font-size: 50px;
 }
 
 .subtitle {
-    font-weight: 500;
-    font-size: 30px;
+  font-weight: 500;
+  font-size: 30px;
 }
 
 .container {
-    max-width: 1000px;
-    margin: 50px auto;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    position: relative;
-    padding: 20px;
+  max-width: 1000px;
+  margin: 50px auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  padding: 20px;
 }
 
 .btn {
-    padding: 10px 20px;
-    background-color: teal;
-    border: 0;
-    color: aliceblue;
-    font-weight: bolder;
-    font-size: 20px;
+  padding: 10px 20px;
+  background-color: teal;
+  border: 0;
+  color: aliceblue;
+  font-weight: bolder;
+  font-size: 20px;
 }
 
 .row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .account {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    gap: 10px;
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .obSide {
-    background-image: linear-gradient(45deg, #6303B1, #ff0099);
+  background-image: linear-gradient(45deg, #6303b1, #f09);
 }
 
 .logo-img {
-    width: 150px;
-    margin: 0 auto;
-    padding: 20px;
+  width: 150px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .back {
-    text-align: center;
-    padding: 20px auto;
-    margin: 50px 0 0 0;
+  text-align: center;
+  padding: 20px auto;
+  margin: 50px 0 0 0;
 }
 
 .active {
-    color: teal;
+  color: teal;
 }
 
 #logout {
-    color: red;
+  color: red;
 }

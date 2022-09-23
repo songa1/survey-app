@@ -58,8 +58,7 @@ $userid = $_COOKIE[$cookietwo];
                     <div class="card">
                         <?php 
                             $sql = "SELECT * FROM surs WHERE creator = '$userid'";
-                            $result = mysqli_query($con, $sql);  
-                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                            $result = mysqli_query($con, $sql);   
                             $count = mysqli_num_rows($result); 
                         
                             echo "<h1>$count</h1>";
@@ -74,13 +73,14 @@ $userid = $_COOKIE[$cookietwo];
                     </div> -->
                     <div class="card">
                     <?php 
-                            $sql = "SELECT * FROM users WHERE id = '$userid'";
-                            $result = mysqli_query($con, $sql);  
-                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
-                            $count = mysqli_num_rows($result); 
-                        
-                            echo "<h1>$row['creation_date']</h1>";
+                            $sqel = "SELECT * FROM users WHERE id = '$userid'";
+                            $results = mysqli_query($con, $sqel);  
+                            $row = mysqli_fetch_array($results, MYSQLI_ASSOC);  
+                            $dada = $row['creation_date'];
+                            echo "<h1>$dada</h1>";
                             echo "<p>Time joined</p>";
+
+                            $con->close();
                         ?>
                     </div>
 

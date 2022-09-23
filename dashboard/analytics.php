@@ -64,6 +64,8 @@ $userid = $_COOKIE[$cookietwo];
                         
                             echo "<h1>$count</h1>";
                             echo "<p>Questions</p>";
+
+                            $con->close()
                         ?>
                     </div>
                     <!-- <div class="card">
@@ -71,8 +73,15 @@ $userid = $_COOKIE[$cookietwo];
                         <p>Answers</p>
                     </div> -->
                     <div class="card">
-                        <h1><?php echo "Date"; ?></h1>
-                        <p>Months since joined</p>
+                    <?php 
+                            $sql = "SELECT * FROM users WHERE id = '$userid'";
+                            $result = mysqli_query($con, $sql);  
+                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                            $count = mysqli_num_rows($result); 
+                        
+                            echo "<h1>$row['creation_date']</h1>";
+                            echo "<p>Time joined</p>";
+                        ?>
                     </div>
 
                     <?php

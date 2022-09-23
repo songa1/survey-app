@@ -64,29 +64,21 @@ $userid = $_COOKIE[$cookietwo];
                             echo "<h1>$count</h1>";
                             echo "<p>Questions</p>";
 
-                            $con->close()
                         ?>
                     </div>
-                    <!-- <div class="card">
-                        <h1>12</h1>
-                        <p>Answers</p>
-                    </div> -->
                     <div class="card">
                     <?php 
-                            $sqel = "SELECT * FROM users WHERE id = '$userid'";
-                            $results = mysqli_query($con, $sqel);  
-                            $row = mysqli_fetch_array($results, MYSQLI_ASSOC);  
-                            $dada = $row['creation_date'];
-                            echo "<h1>$dada</h1>";
-                            echo "<p>Time joined</p>";
+                            $sqel = "SELECT * FROM users WHERE id='$userid'";
+                            if ($con->query($sqel)->num_rows > 0) {
+                                while($row = $result->fetch_assoc()) {
+                                    echo "<h1>".$row['creation_date']."</h1>";
+                                    echo "<p>Time Joined</p>";
+                                }
+                            }
 
                             $con->close();
                         ?>
                     </div>
-
-                    <?php
-                        $con->close();
-                    ?>
                 </div>
             </div>
         </section>

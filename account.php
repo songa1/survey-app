@@ -65,15 +65,15 @@
             <?php  
 
                 if(isset($_POST['login_submit'])){
-                    $email = $_POST['email_login'];
+                    $email_log = $_POST['email_login'];
                     $password = $_POST['password_login'];
 
-                    $email = stripcslashes($email);  
+                    $email_log = stripcslashes($email_log);  
                     $password = stripcslashes($password);  
-                    $email = mysqli_real_escape_string($con, $email);  
+                    $email_log = mysqli_real_escape_string($con, $email_log);  
                     $password = mysqli_real_escape_string($con, $password);  
 
-                    $sql = "SELECT * FROM users WHERE email= '$email' AND password = '$password'";
+                    $sql = "SELECT * FROM users WHERE email= '$email_log' AND password = '$password'";
                     $result = mysqli_query($con, $sql);  
                     $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
                     $count = mysqli_num_rows($result); 
@@ -125,16 +125,28 @@
                     $names = $_POST['names'];
                     $today = date('Y-m-d H:i:s');
 
-                    $sqle = "INSERT INTO users (`user_name`, `email`, `password`, `creation_date`) VALUES ('$names', '$email', '$password', '$today')";  
-                    
-                    if($con->query($sqle) === TRUE){  
-                        echo "<script>alert('Successfully registered! Login to continue!')</script>"; 
-                        echo "<script>window.location.href = './account.php'</script>";  
-                    }  
-                    else{  
-                        echo "<script> alert('Register failed. Try again.')</script>";  
-                    }
+                    $email = stripcslashes($email);    
+                    $email = mysqli_real_escape_string($con, $email);   
 
+                    $sqlb = "SELECT * FROM users WHERE email= '$email'";
+                    $resultone = mysqli_query($con, $sqlb);  
+                    $rowone = mysqli_fetch_array($resultone, MYSQLI_ASSOC);  
+                    $countone = mysqli_num_rows($resultone); 
+
+                    if($countone == 1){  
+                        echo "<script>alert('Email already registered!')</script>";
+                    }else {
+
+                        $sqle = "INSERT INTO users (`user_name`, `email`, `password`, `creation_date`) VALUES ('$names', '$email', '$password', '$today')";  
+                        
+                        if($con->query($sqle) === TRUE){  
+                            echo "<script>alert('Successfully registered! Login to continue!')</script>"; 
+                            echo "<script>window.location.href = './account.php'</script>";  
+                        }  
+                        else{  
+                            echo "<script> alert('Register failed. Try again.')</script>";  
+                        }
+                    }
                     $con->close();
                 }
             ?>

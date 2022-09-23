@@ -6,7 +6,7 @@ $username = $_COOKIE[$cookie];
 $userid = $_COOKIE[$cookietwo];
 $question_ans = $_GET['question'];
 
-$sql = "SELECT * FROM surs WHERE question='$question_ans'";
+$sql = "SELECT * FROM surs WHERE id='$question_ans'";
 
 $result = $con->query($sql);
 

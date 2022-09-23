@@ -66,21 +66,7 @@ $userid = $_COOKIE[$cookietwo];
                             <p>Created on <?php echo $row["creation_date"] ?></p>
                             <div class="actions" style="display: flex;align-items: center;">
                                 <a style="font-size: xx-small; color: green; padding: 5px;" href="answers.php?question=<?php echo $row['id']; ?>">Answers</a>
-                                <form method="POST">
-                                    <input type="submit" style="font-size: xx-small; color: red; padding: 5px; cursor: pointer; background-color: transparent; border: none;outline: none;" name="delete_question" value="Delete" />
-                                </form>
-                                
-                                <?php 
-                                    if(isset($_POST['delete_question'])){
-                                        $delete_query = "DELETE FROM surs WHERE id='$qid";
-                                        if ($con->query($delete_query) === TRUE) {
-                                            echo "<script>alert('Question deleted!')</script>";
-                                            echo "<script>window.location.href = './listing.php';</script>";
-                                        } else {
-                                            echo "<script>alert('Error deleting record: " . $con->error. "</script>";
-                                        }
-                                    }
-                                ?>
+                                    <a style="font-size: xx-small; color: red; padding: 5px; cursor: pointer;" href="../php/delete.php?id=<?php echo $row['id'] ?>">Delete</a>
                             </div>
                         </div>
                     </div>

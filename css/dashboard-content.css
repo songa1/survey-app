@@ -38,7 +38,7 @@
     text-decoration: none;
     font-weight: bolder;
     font-size: large;
-    color: var(--main-blue);
+    color: rgb(9, 54, 83);
 }
 
 .dash-top-title {
@@ -103,4 +103,8 @@
   width: 100%;
   padding: 10px;
   margin-bottom: 5px;
+}
+
+.action-btn {
+  font-size: 10px;
 }

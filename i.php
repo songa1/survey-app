@@ -21,6 +21,7 @@
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
+                        $surv_id = $row['id'];
                       ?>
                         <h2 class="title"><?php echo $row['survey_title']; ?></h2>
                         <p class="subtitle"><?php echo $row['question']; ?></p>
@@ -29,19 +30,34 @@
                 } else {
                     echo "0 results";
                 }
-                $con->close();
             ?>
             
         </header>
-        <main>
+        <form method="POST">
             <div class="input-field">
-                <label>Email</label>
-                <input type="email" />
+                <label>Enter your answer</label>
+                <textarea name="answer"></textarea>
             </div>
             <div class="input-submit">
-                <button>Submit</button>
+                <input type="submit" name="answer_btn" class="btn" valure="Submit"/>
             </div>
-        </main>
+        </form>
+        <?php
+            if(isset($_POST['answer_btn'])){
+                $ans = $_POST['answer'];
+                $today = date('Y-m-d H:i:s');
+
+                $sqlo = "INSERT INTO answer (`answer`, `creation_date`, `question_answered`) VALUES  ('$ans', '$today', '$surv_id')";
+
+                if($con->query($sqlo) === TRUE){
+                    echo "<script>window.location.href = './success.html';</script>";
+                }else {
+                    echo "<script>alert('Failed. Try again!');</script>";
+                }
+
+                $con->close();
+            }
+        ?>
     </div>
 </body>
 </html>

@@ -56,13 +56,20 @@ $userid = $_COOKIE[$cookietwo];
                 
                 <div class="cards">
                     <div class="card">
-                        <h1>12</h1>
-                        <p>Questions</p>
+                        <?php 
+                            $sql = "SELECT * FROM surs WHERE creator = '$userid'";
+                            $result = mysqli_query($con, $sql);  
+                            $row = mysqli_fetch_array($result, MYSQLI_ASSOC);  
+                            $count = mysqli_num_rows($result); 
+                        
+                            echo "<h1>$count</h1>";
+                            echo "<p>Questions</p>";
+                        ?>
                     </div>
-                    <div class="card">
+                    <!-- <div class="card">
                         <h1>12</h1>
                         <p>Answers</p>
-                    </div>
+                    </div> -->
                     <div class="card">
                         <h1>12</h1>
                         <p>Months since joined</p>

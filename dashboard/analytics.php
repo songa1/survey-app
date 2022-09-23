@@ -49,7 +49,7 @@ $userid = $_COOKIE[$cookietwo];
                     <h2>Lifetime Analytics</h2>
                     <form method="POST">
                         <select name="time" id="time">
-                            <option value="now">Today</option>
+                            <option value="now">Lifetime</option>
                         </select>
                     </form>
                 </div>

@@ -4,7 +4,24 @@ $cookietwo = "id";
 include('../php/connect.php'); 
 $username = $_COOKIE[$cookie];
 $userid = $_COOKIE[$cookietwo];
+$question_ans = $_GET['question'];
+
+$sql = "SELECT * FROM surs WHERE question='$question_ans'";
+
+$result = $con->query($sql);
+
+
+
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        setcookie('question', $row['question'] ? $row['question'] : "No Question Added!", time() + (86400 * 30), "/");
+    }
+}
+
+$question_title = $_COOKIE['question'];
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,52 +60,32 @@ $userid = $_COOKIE[$cookietwo];
             </div>
             <div class="right-content">
                 <div class="dash-top-title">
-                    <h2>List of all surveys you created</h2>
+                    <h2>Answers to <?php echo "<i>'$question_title'</i>"; ?></h2>
                     <input type="text" placeholder="Search...">
                 </div>
                 
                 <div class="surveys">
                     <?php 
-                        $sql = "SELECT * FROM surs WHERE creator='$userid'";
+                        
+                        $sql = "SELECT * FROM answer WHERE question_answered='$question_ans'";
 
                         $result = $con->query($sql);
 
                         if ($result->num_rows > 0) {
-                            
                             while($row = $result->fetch_assoc()) {
-                                $qid = $row['id'];
-                                
                     ?>
                     <div class="survey">
-                        <img src="../assets/survey-results-analysis.jpg" alt="User">
                         <div class="mdata">
-                            <a href="../i.php?id=<?php echo $row['survey_slug'] ?>"><?php echo $row["survey_title"] ?></a>
+                            <a><?php echo $row["answer"] ?></a>
                             <p>Created on <?php echo $row["creation_date"] ?></p>
-                            <div class="actions" style="display: flex;align-items: center;">
-                                <a style="font-size: xx-small; color: green; padding: 5px;" href="answers.php?question=<?php echo $row['id']; ?>">Answers</a>
-                                <form method="POST">
-                                    <input type="submit" style="font-size: xx-small; color: red; padding: 5px; cursor: pointer; background-color: transparent; border: none;outline: none;" name="delete_question" value="Delete" />
-                                </form>
-                                
-                                <?php 
-                                    if(isset($_POST['delete_question'])){
-                                        $delete_query = "DELETE FROM surs WHERE id='$qid";
-                                        if ($con->query($delete_query) === TRUE) {
-                                            echo "<script>alert('Question deleted!')</script>";
-                                            echo "<script>window.location.href = './listing.php';</script>";
-                                        } else {
-                                            echo "<script>alert('Error deleting record: " . $con->error. "</script>";
-                                        }
-                                    }
-                                ?>
-                            </div>
+                            
                         </div>
                     </div>
                     
                     <?php
                         }
                     } else {
-                      echo "<h1>There are no questions at the moment!</h1>";
+                      echo "<h1>There are no answers at the moment!</h1>";
                     }
 
                     $con->close();
@@ -103,3 +100,4 @@ $userid = $_COOKIE[$cookietwo];
     <script src="../js/checkAuth.js"></script>
 </body>
 </html>
+

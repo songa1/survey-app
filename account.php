@@ -79,7 +79,7 @@
                         <input type="password" name="password_reg"/>
                     </div>
                     <div class="input-submit row">
-                        <input type="submit" value="Register" name="register_button">
+                        <input type="submit" value="Register" class="btn" name="register_button">
                     </div>
                 </form>
             </div>
@@ -89,13 +89,13 @@
                     $email = $_POST['email_reg'];
                     $password = $_POST['password_reg'];
                     $names = $_POST['names'];
+                    $today = date('Y-m-d H:i:s');
 
-                    $sql = "INSERT INTO users (`user_name`, `email`, `password`, `creation_date`) VALUES ('$names', '$email', '$password', $today)";
-                    $regre = mysqli_query($con, $sql);  
+                    $sqle = "INSERT INTO users (`user_name`, `email`, `password`, `creation_date`) VALUES ('$names', '$email', '$password', '$today')";  
                     
-                    if($regre === true){  
+                    if($con->query($sqle) === TRUE){  
                         echo "<script>alert('Successfully registered! Login to continue!')</script>"; 
-                        echo "<script>window.location.reload();</script>";  
+                        echo "<script>window.location.href = './account.php'</script>";  
                     }  
                     else{  
                         echo "<script> alert('Register failed. Try again.')</script>";  

@@ -36,7 +36,7 @@
                     <a href="#">Analytics</a>
                     <a href="./listing.php">Surveys</a>
                     <a href="#">Settings</a>
-                    <a href="#" id="logout">Logout</a>
+                    <a href="../account.php" id="logout">Logout</a>
                 </div>
             </div>
             <div class="right-content">
@@ -66,6 +66,7 @@
                     $body = $_POST['question'];
                     $slug = $_POST['slug'];
                     $privacy = $_POST['privacy'];
+                    $today = date('Y-m-d H:i:s');
 
                     $sqli = "INSERT INTO surs (`survey_title`,`question`, `survey_slug`,`creator`, `creation_date`, `privacy`) VALUES ('$title', '$body', '$slug', '1', '$today', '$privacy')";
 
